@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM</title>
+</head>
+<body style ="background-color: #424242; color : #fff ;">
+    <h2 class="h2baba">hi dom</h2>
+    <script>
+        document.querySelector('h2').style.color = 'red';
+        console.log(document.querySelector('.h2baba').innerText);
+        const parent = document.querySelector('.h2baba')
+        console.log(parent.children[2])
+        const h2 = document.querySelector('h2');
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`;
+}
+
+let i = 0;
+let fS= 2;
+function changeColor() {
+  if (i < 10) {
+    h2.style.color = getRandomHexColor();
+    h2.style.fontSize = `${fS}px`;
+    //h2.style.border = "1px solid green";
+    
+    h2.style.borderRadius  = "10px";
+
+    i++;
+    fS += 10;
+    setTimeout(changeColor, 2000); // Change color every 500ms
+  }
+}
+
+changeColor();
+
+    </script>
+</body>
+</html>
